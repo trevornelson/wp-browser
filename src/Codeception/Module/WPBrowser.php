@@ -76,4 +76,18 @@ class WPBrowser extends PhpBrowser
 
         return is_array( $matchingCookies ) ? $matchingCookies : null;
     }
+
+    private function checkLoginSelectors() {
+        if (!is_set( $this->config['usernameLoginSelector'] )) {
+            $this->config['usernameLoginSelector'] = '#user_login';
+        }
+
+        if (!is_set( $this->config['passwordLoginSelector'] )) {
+            $this->config['passwordLoginSelector'] = '#user_pass';
+        }
+
+        if (!is_set( $this->config['usernameLoginSelector'] )) {
+            $this->config['loginButtonSelector'] = '#wp-submit';
+        }
+    }
 }
