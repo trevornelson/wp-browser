@@ -10,7 +10,8 @@
 		 * @return void
 		 */
 		public function loginAsAdmin() {
-			$this->loginAs( $this->config['adminUsername'], $this->config['adminPassword'] );
+			return $this->config['usernameLoginSelector'];
+			// $this->loginAs( $this->config['adminUsername'], $this->config['adminPassword'] );
 		}
 
 		/**
@@ -22,7 +23,6 @@
 		 * @return void
 		 */
 		public function loginAs( $username, $password ) {
-			return $this->config['usernameLoginSelector'];
 			// $this->amOnPage( $this->loginUrl );
 			// $this->fillField( $this->config['usernameLoginSelector'], $username );
 			// $this->fillField( $this->config['passwordLoginSelector'], $password );
