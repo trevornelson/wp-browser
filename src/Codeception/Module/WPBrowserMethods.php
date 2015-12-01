@@ -11,7 +11,7 @@
 		 */
 		public function loginAsAdmin() {
 			return $this->config['usernameLoginSelector'];
-			$this->loginAs( $this->config['adminUsername'], $this->config['adminPassword'] );
+			// $this->loginAs( $this->config['adminUsername'], $this->config['adminPassword'] );
 		}
 
 		/**
