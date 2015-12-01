@@ -46,6 +46,7 @@ class WPBrowser extends PhpBrowser
         $this->loginUrl = str_replace('wp-admin', 'wp-login.php', $this->config['adminUrl']);
         $this->adminUrl = rtrim($this->config['adminUrl'], '/');
         $this->pluginsUrl = $this->adminUrl . '/plugins.php';
+        $this->checkLoginSelectors();
     }
 
     /**
@@ -75,5 +76,20 @@ class WPBrowser extends PhpBrowser
         $this->debug( 'Cookies matching pattern ' . $cookiePattern . ' : ' . implode( ', ', $cookieList ) );
 
         return is_array( $matchingCookies ) ? $matchingCookies : null;
+    }
+
+    /**
+     * Sets default login field and button selectors if they aren't in suite config.
+     */
+    private function checkLoginSelectors() {
+        if (!is_set( $this->config['usernameLoginSelector'] )) {
+            $this->config['usernameLoginSelector'] = '#user_login';
+        }
+        if (!is_set( $this->config['passwordLoginSelector'] )) {
+            $this->config['passwordLoginSelector'] = '#user_pass';
+        }
+        if (!is_set( $this->config['usernameLoginSelector'] )) {
+            $this->config['loginButtonSelector'] = '#wp-submit';
+        }
     }
 }
