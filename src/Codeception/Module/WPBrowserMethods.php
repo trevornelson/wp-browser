@@ -23,9 +23,9 @@
 		 */
 		public function loginAs( $username, $password ) {
 			$this->amOnPage( $this->loginUrl );
-			$this->fillField( '#user_login', $username );
-			$this->fillField( '#user_pass', $password );
-			$this->click( '#wp-submit' );
+			$this->fillField( $this->config['usernameLoginSelector'], $username );
+			$this->fillField( $this->config['passwordLoginSelector'], $password );
+			$this->click( $this->config['loginButtonSelector'] );
 		}
 
 		/**
