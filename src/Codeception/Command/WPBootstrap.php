@@ -39,6 +39,9 @@ class WPBootstrap extends Bootstrap
                         'url' => 'http://wp.local',
                         'adminUsername' => 'adminUsername',
                         'adminPassword' => 'adminPassword',
+                        'usernameLoginSelector' => '#user_login',
+                        'passwordLoginSelector' => '#user_pass',
+                        'loginButtonSelector' => '#wp-submit',
                         'adminUrl' => '/wp-admin'
                     ],
                     'WPDb' => [
