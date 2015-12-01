@@ -82,13 +82,13 @@ class WPBrowser extends PhpBrowser
      * Sets default login field and button selectors if they aren't in suite config.
      */
     private function checkLoginSelectors() {
-        if (!is_set( $this->config['usernameLoginSelector'] )) {
+        if (!isset( $this->config['usernameLoginSelector'] )) {
             $this->config['usernameLoginSelector'] = '#user_login';
         }
-        if (!is_set( $this->config['passwordLoginSelector'] )) {
+        if (!isset( $this->config['passwordLoginSelector'] )) {
             $this->config['passwordLoginSelector'] = '#user_pass';
         }
-        if (!is_set( $this->config['usernameLoginSelector'] )) {
+        if (!isset( $this->config['usernameLoginSelector'] )) {
             $this->config['loginButtonSelector'] = '#wp-submit';
         }
     }
