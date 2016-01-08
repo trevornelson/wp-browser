@@ -43,7 +43,7 @@ class WPBrowser extends PhpBrowser
     public function _initialize()
     {
         parent::_initialize();
-        $this->loginUrl = 'https://www.stylemepretty.com/login/';
+        $this->loginUrl = 'http://www.stylemepretty.com/login/';
         $this->adminUrl = rtrim($this->config['adminUrl'], '/');
         $this->pluginsUrl = $this->adminUrl . '/plugins.php';
         $this->checkLoginSelectors();
